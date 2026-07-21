@@ -43,3 +43,10 @@ print("Bias: ",b)
 print("MSE:",mean_squared_error(y_test,y_pred_gd))
 print("R2 Score:",r2_score(y_test,y_pred_gd))
 ##
+
+x_train_ne=np.c_[np.ones((len(x_train),1)),x_train]
+x_test_ne=np.c_[np.ones((len(x_test),1)),x_test]
+theta= np.linalg.inv(x_train_ne.T @ x_train_ne) @ x_train_ne.T @ y_train
+ypred_ne=x_test_ne @ theta
+
+##
