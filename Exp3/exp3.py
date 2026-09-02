@@ -84,4 +84,4 @@ models=[("MLE",mle_model,y_pred_mle),("MAP L2",map_l2,y_pred_l2),("MAP L1",map_l
 
 for name,model,pred in models:
     results.loc[len(results)]=[name,accuracy_score(y_test, pred),precision_score(y_test,pred),recall_score(y_test,pred),f1_score(y_test,pred)]
-    print(results)
+print(results)
