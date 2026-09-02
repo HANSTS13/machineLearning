@@ -100,3 +100,11 @@ for container in ax.containers:
     ax.bar_label(container,fmt="%.3f",padding=2)
     plt.tight_layout()
     plt.show()
+
+
+plt.figure(figsize=(9,7))
+for name,model,pred in models:
+    y_prob=model.predict_proba(x_test)[:,1]
+    fpr,tpr,thresholds=roc_curve(y_test,y_prob)
+    roc_auc=auc(fpr,tpr)
+    plt.plot(fpr,tpr,label=f"{name}(AUC={roc_auc:.3f})")
