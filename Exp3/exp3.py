@@ -108,3 +108,12 @@ for name,model,pred in models:
     fpr,tpr,thresholds=roc_curve(y_test,y_prob)
     roc_auc=auc(fpr,tpr)
     plt.plot(fpr,tpr,label=f"{name}(AUC={roc_auc:.3f})")
+
+    plt.plot([0,1],[0,1],linestyle="--",label="Random Classifier")
+    plt.xlabel("False Positive Rate(FPR)")
+    plt.ylabel("True Positive Rate(TPR)")
+    plt.title("ROC Cure:MLE vs MAP L2 vs MAP L1")
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
