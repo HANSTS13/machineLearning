@@ -73,3 +73,8 @@ def evaluate(model_name,y_true,y_pred):
 evaluate("MLE",y_test,y_pred_mle)
 evaluate("MLE(L2)",y_test,y_pred_l2)
 evaluate("MLE(L1)",y_test,y_pred_l1)
+
+print("Number of Zero Coefficients")
+print("MLE :",np.sum(mle_model.coef_[0]==0))
+print("MAP L2 :",np.sum(map_l2.coef_[0]==0 ))
+print("MAP L1 :",np.sum(map_l1.coef_[0]==0 ))
