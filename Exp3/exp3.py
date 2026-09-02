@@ -85,3 +85,18 @@ models=[("MLE",mle_model,y_pred_mle),("MAP L2",map_l2,y_pred_l2),("MAP L1",map_l
 for name,model,pred in models:
     results.loc[len(results)]=[name,accuracy_score(y_test, pred),precision_score(y_test,pred),recall_score(y_test,pred),f1_score(y_test,pred)]
 print(results)
+
+ax=results.set_index("Model").plot(
+    kind="bar",
+    figsize=(10,6))
+plt.title("Performance comparison: MLE vs MAP-L2 vs MAP-L1")
+plt.xlabel("Model")
+plt.ylabel("Score")
+plt.ylim(0.85,1.02)
+plt.xticks(rotation=0)
+plt.legend(title="Metric")
+plt.grid(axis="y",alpha=0.3)
+for container in ax.containers:
+    ax.bar_label(container,fmt="%.3f",padding=2)
+    plt.tight_layout()
+    plt.show()
