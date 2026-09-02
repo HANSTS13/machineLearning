@@ -78,3 +78,10 @@ print("Number of Zero Coefficients")
 print("MLE :",np.sum(mle_model.coef_[0]==0))
 print("MAP L2 :",np.sum(map_l2.coef_[0]==0 ))
 print("MAP L1 :",np.sum(map_l1.coef_[0]==0 ))
+
+results=pd.DataFrame(columns=["Model","Accuracy","Precision","Recall","F1 Score"])
+models=[("MLE",mle_model,y_pred_mle),("MAP L2",map_l2,y_pred_l2),("MAP L1",map_l1,y_pred_l1)]
+
+for name,model,pred in models:
+    results.loc[len(results)]=[name,accuracy_score(y_test, pred),precision_score(y_test,pred),recall_score(y_test,pred),f1_score(y_test,pred)]
+    print(results)
