@@ -57,3 +57,19 @@ map_l1=LogisticRegression(
 map_l1.fit(x_train,y_train)
 y_pred_l1=map_l1.predict(x_test)
 
+def evaluate(model_name,y_true,y_pred):
+    print("\n","="*40)
+    print(model_name)
+    print("="*40)
+
+    print("Accuracy:",accuracy_score(y_true,y_pred))
+    print("Precision:",precision_score(y_true,y_pred))
+    print("Recall:",recall_score(y_true,y_pred))
+    print("F1 Score:",f1score(y_true,y_pred))
+
+    print("\nConfusion Matrix")
+    print(confusion_matrix(y_true,y_pred))
+
+evaluate("MLE",y_test,y_pred_mle)
+evaluate("MLE(L2)",y_test,y_pred_l2)
+evaluate("MLE(L1)",y_test,y_pred_l1)
