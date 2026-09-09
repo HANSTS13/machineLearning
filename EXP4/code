@@ -1,0 +1,24 @@
+import numpy as np
+from sklearn.datasets import fetch_20newsgroups
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB, BernoulliNB
+from sklearn.metrics import (
+accuracy_score,
+precision_score,
+recall_score,
+f1_score,)
+
+train_data = fetch_20newsgroups(
+    subset ="train",
+    remove=("headers","footers","quotes"))
+
+test_data = fetch_20newsgroups(
+    subset ="test",
+    remove=("headers","footers","quotes"))
+
+
+x_train_text= train_data.data
+y_train= train_data.target
+x_test_text=test_data.data
+y_test=test_data.target
+class_names=train_data.target_names
