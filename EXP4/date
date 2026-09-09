@@ -1,2 +1,8 @@
 09-09-2026
   
+Implement a Naive Bays classifier to categorize text documents into topics using the 20 Newsgroups dataset. Compare the performance of the multinomial Naive Bayes with Bernoulli Naive Bayes.
+Tasks:
+	Load and preprocess the 20 Newsgroups dataset.
+	Implement Multinomial naive Bayes and Bernouli Naive Bayes classifiers.
+	Evaluate and compare the performance of both models using metrics such as accuracy and F-1 score
+	Discuss the strengths and weaknesses of each Naive Bayes variant for text classification.
