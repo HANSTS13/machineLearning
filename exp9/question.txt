@@ -1,0 +1,5 @@
+Implement and compare hieararchial and partiotional lustering algorithmson the Mall Customers dataset. Discuss the strengths and weaknesses of each method based on the clustering results and evaluation metrics. 
+Tasks:
+.Load and preprocess hte Mall Customers dataset.
+.Apply both hierarchial and Kmeans clustering. Compare results using metrics such as inertia silhoutte score and clustering visualization.
+. Discuss the advantages nad disadvantages oof each clustering method.
